@@ -1,0 +1,14 @@
+# for local development
+version: '3.7'
+services:
+  frontend:
+    build:
+      context: .
+      target: 'develop-stage'
+    container_name: instamemo-frontend
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+    - '8080:8080'
+    command: ['yarn', 'serve']
